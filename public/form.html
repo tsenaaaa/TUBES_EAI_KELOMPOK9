@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pembayaran Hotel</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="form-container">
+    <form class="form-hotel" id="paymentForm" method="POST" action="#">
+      <h2>Pembayaran Hotel</h2>
+
+      <label for="guest">Nama Tamu</label>
+      <input type="text" id="guest_name" name="guest" placeholder="Contoh: Budi Santoso" required />
+
+      <label for="room">Nomor Kamar</label>
+      <input type="text" id="room_number" name="room" placeholder="Contoh: 207" required />
+
+      <label for="service">Layanan</label>
+      <select id="service_type" name="service" required>
+        <option value="">-- Pilih Layanan --</option>
+        <option value="room">Room Service</option>
+        <option value="laundry">Laundry</option>
+        <option value="spa">Spa</option>
+        <option value="restaurant">Restoran</option>
+      </select>
+
+      <label for="amount">Total Bayar (Rp)</label>
+        <input type="text" id="amount" name="amount" placeholder="Contoh: 250000">
+
+      <label>Metode Bayar</label>
+      <div class="radio-group">
+        <label><input type="radio" name="method" value="cash" checked /> Tunai</label>
+        <label><input type="radio" name="method" value="qris" /> QRIS</label>
+        <label><input type="radio" name="method" value="card" /> Kartu Kredit</label>
+      </div>
+
+      <label for="note">Catatan</label>
+      <textarea id="note" name="note" rows="3" placeholder="Tambahan informasi jika ada..."></textarea>
+
+      <button type="submit">Bayar Sekarang</button>
+    </form>
+  </div>
+<script src="form-logic.js"></script>
+<script src="format.js"></script>
+</body>
+</html>

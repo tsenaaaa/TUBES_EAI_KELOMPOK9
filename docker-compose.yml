@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+  payment-service:
+    build: .
+    container_name: payment-service
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_NAME: payment_db
+      DB_USER: root
+      DB_PASS: root
+    volumes:
+      - .:/var/www/html
+    working_dir: /var/www/html
+    restart: unless-stopped
+
+  db:
+    image: mysql:8
+    container_name: db
+    restart: always
+    ports:
+      - "3310:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: payment_db
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: root
+    depends_on:
+      - db
