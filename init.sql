@@ -12,3 +12,24 @@ CREATE TABLE IF NOT EXISTS payments (
     notes TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+
+CREATE DATABASE IF NOT EXISTS menu_db;
+USE menu_db;
+
+CREATE TABLE IF NOT EXISTS menu (
+    menu_id INT AUTO_INCREMENT PRIMARY KEY,
+    item_name VARCHAR(100),
+    description TEXT,
+    price DECIMAL(10,2),
+    availability BOOLEAN DEFAULT TRUE
+);
+
+CREATE TABLE IF NOT EXISTS room_orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    guest_name VARCHAR(100),
+    room_number VARCHAR(10),
+    menu_items TEXT,
+    total_amount DECIMAL(10,2),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

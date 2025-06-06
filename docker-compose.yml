@@ -8,6 +8,7 @@ services:
       - "8080:80"
     depends_on:
       - db
+      - menu-service
     environment:
       DB_HOST: db
       DB_NAME: payment_db
@@ -42,3 +43,32 @@ services:
       MYSQL_ROOT_PASSWORD: root
     depends_on:
       - db
+
+  menu-service:
+    build: ./menu-service
+    container_name: menu-service
+    ports:
+      - "8082:80"
+    depends_on:
+      - db-menu
+    environment:
+      DB_HOST: db-menu
+      DB_NAME: menu_db
+      DB_USER: root
+      DB_PASS: root
+    volumes:
+      - ./menu-service:/var/www/html
+    working_dir: /var/www/html
+    restart: unless-stopped
+
+  db-menu:
+    image: mysql:8
+    container_name: db-menu
+    restart: always
+    ports:
+      - "3311:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: menu_db
+    volumes:
+      - ./menu-service/init.sql:/docker-entrypoint-initdb.d/init.sql
