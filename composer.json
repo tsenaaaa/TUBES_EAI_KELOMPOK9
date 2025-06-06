@@ -1,0 +1,17 @@
+{
+    "name": "hafiz/payment-service",
+    "autoload": {
+        "psr-4": {
+            "Hafiz\\PaymentService\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "HafizhAz",
+            "email": "125438227+HafizhAz@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "webonyx/graphql-php": "^15.20"
+    }
+}
