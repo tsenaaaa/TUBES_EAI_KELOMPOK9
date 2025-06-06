@@ -12,18 +12,53 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: Content-Type');
 header('Content-Type: application/json');
 
-// Query (opsional)
+// Reusable type for payments
+$paymentType = new ObjectType([
+    'name' => 'Payment',
+    'fields' => [
+        'id'             => Type::int(),
+        'guest_name'     => Type::string(),
+        'room_number'    => Type::string(),
+        'service_type'   => Type::string(),
+        'total_amount'   => Type::float(),
+        'payment_method' => Type::string(),
+        'notes'          => Type::string(),
+        'created_at'     => Type::string()
+    ]
+]);
+
+// Query
 $queryType = new ObjectType([
     'name' => 'Query',
     'fields' => [
         'ping' => [
             'type' => Type::string(),
             'resolve' => fn () => 'pong'
+        ],
+        'getPaymentById' => [
+            'type' => $paymentType,
+            'args' => [
+                'id' => Type::nonNull(Type::int())
+            ],
+            'resolve' => function ($root, $args) {
+                $pdo = connectDB();
+                $stmt = $pdo->prepare("SELECT * FROM payments WHERE id = ?");
+                $stmt->execute([$args['id']]);
+                return $stmt->fetch(PDO::FETCH_ASSOC);
+            }
+        ],
+        'getAllPayments' => [
+            'type' => Type::listOf($paymentType),
+            'resolve' => function () {
+                $pdo = connectDB();
+                $stmt = $pdo->query("SELECT * FROM payments ORDER BY created_at DESC");
+                return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            }
         ]
     ]
 ]);
 
-// Mutation untuk pembayaran hotel
+// Mutation
 $mutationType = new ObjectType([
     'name' => 'Mutation',
     'fields' => [
