@@ -1,0 +1,23 @@
+[2025-06-07 07:18:56] local.ERROR: Unclosed '(' on line 43 {"exception":"[object] (ParseError(code: 0): Unclosed '(' on line 43 at C:\\Users\\ganal\\Desktop\\Project\\Joki\\joki06062025_MicroservicePHP\\booking-service\\app\\Http\\Controllers\\CustomerController.php:44)
+[stacktrace]
+#0 C:\\Users\\ganal\\Desktop\\Project\\Joki\\joki06062025_MicroservicePHP\\booking-service\\vendor\\composer\\ClassLoader.php(427): Composer\\Autoload\\{closure}('C:\\\\Users\\\\ganal\\\\...')
+#1 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Http\\\\Contro...')
+#2 C:\\Users\\ganal\\Desktop\\Project\\Joki\\joki06062025_MicroservicePHP\\booking-service\\vendor\\illuminate\\container\\Container.php(912): ReflectionClass->__construct('App\\\\Http\\\\Contro...')
+#3 C:\\Users\\ganal\\Desktop\\Project\\Joki\\joki06062025_MicroservicePHP\\booking-service\\vendor\\illuminate\\container\\Container.php(795): Illuminate\\Container\\Container->build('App\\\\Http\\\\Contro...')
+#4 C:\\Users\\ganal\\Desktop\\Project\\Joki\\joki06062025_MicroservicePHP\\booking-service\\vendor\\illuminate\\container\\Container.php(731): Illuminate\\Container\\Container->resolve('App\\\\Http\\\\Contro...', Array)
+#5 C:\\Users\\ganal\\Desktop\\Project\\Joki\\joki06062025_MicroservicePHP\\booking-service\\vendor\\laravel\\lumen-framework\\src\\Application.php(327): Illuminate\\Container\\Container->make('App\\\\Http\\\\Contro...', Array)
+#6 C:\\Users\\ganal\\Desktop\\Project\\Joki\\joki06062025_MicroservicePHP\\booking-service\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(326): Laravel\\Lumen\\Application->make('App\\\\Http\\\\Contro...')
+#7 C:\\Users\\ganal\\Desktop\\Project\\Joki\\joki06062025_MicroservicePHP\\booking-service\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(284): Laravel\\Lumen\\Application->callControllerAction(Array)
+#8 C:\\Users\\ganal\\Desktop\\Project\\Joki\\joki06062025_MicroservicePHP\\booking-service\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(269): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#9 C:\\Users\\ganal\\Desktop\\Project\\Joki\\joki06062025_MicroservicePHP\\booking-service\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(171): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#10 C:\\Users\\ganal\\Desktop\\Project\\Joki\\joki06062025_MicroservicePHP\\booking-service\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(48): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#11 C:\\Users\\ganal\\Desktop\\Project\\Joki\\joki06062025_MicroservicePHP\\booking-service\\bootstrap\\app.php(39): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#12 C:\\Users\\ganal\\Desktop\\Project\\Joki\\joki06062025_MicroservicePHP\\booking-service\\vendor\\illuminate\\pipeline\\Pipeline.php(165): {closure}(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#13 C:\\Users\\ganal\\Desktop\\Project\\Joki\\joki06062025_MicroservicePHP\\booking-service\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#14 C:\\Users\\ganal\\Desktop\\Project\\Joki\\joki06062025_MicroservicePHP\\booking-service\\vendor\\illuminate\\pipeline\\Pipeline.php(119): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#15 C:\\Users\\ganal\\Desktop\\Project\\Joki\\joki06062025_MicroservicePHP\\booking-service\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(428): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#16 C:\\Users\\ganal\\Desktop\\Project\\Joki\\joki06062025_MicroservicePHP\\booking-service\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(167): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#17 C:\\Users\\ganal\\Desktop\\Project\\Joki\\joki06062025_MicroservicePHP\\booking-service\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch(NULL)
+#18 C:\\Users\\ganal\\Desktop\\Project\\Joki\\joki06062025_MicroservicePHP\\booking-service\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#19 {main}
+"} 
